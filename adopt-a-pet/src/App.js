@@ -1,7 +1,9 @@
 import './App.css';
+import React  from 'react';
+
 import {
-Modal
-} from "./standards/styledDivs";
+  Modal
+} from "./standards/styledDivs.js";
 
 function App() {
   return (
