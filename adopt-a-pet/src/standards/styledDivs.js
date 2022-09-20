@@ -1,12 +1,33 @@
 import styled from "styled-components";
 
+export const Screen = styled.div`
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: #304c89ff;
+    justify-content: center;
+    align-items: center;
+`;
+
 export const Modal = styled.div`
     display: flex;
     width: 500px;
     height: 500px;
-    background: #304c89ff;
+    background: #e8e5daff;
+    flex-direction: column;
 `;
 
+export const ModalTitle = styled.div`
+    width: 100%;
+    height: 25%;
+    background: #648de5ff;
+`;
+
+export const ModalSubtitle = styled.div`
+    width: 100%;
+    height: 15%;
+    background: #9eb7e5ff;
+`;
 
 /* CSS HEX */
 // --sage: #cdc392ff;

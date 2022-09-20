@@ -2,14 +2,24 @@ import './App.css';
 import React  from 'react';
 
 import {
-  Modal
+  Screen,
+  Modal,
+  ModalTitle,
+  ModalSubtitle
 } from "./standards/styledDivs.js";
 
 function App() {
   return (
-    <div>
-      <Modal>WELCOME</Modal>
-    </div>
+    <Screen>
+      <Modal>
+        <ModalTitle>
+          Welcome to Adopt-A-Pet
+        </ModalTitle>
+        <ModalSubtitle>
+          Login
+        </ModalSubtitle>
+      </Modal>
+    </Screen>
   );
 }
 
