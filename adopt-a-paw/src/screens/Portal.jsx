@@ -12,8 +12,6 @@ import {
   ModalSeparator,
 } from "../standards/styledDivs.js";
 
-import { setupUser } from "../userFunctions.js";
-
 const Portal = () => {
   return (
     <Screen>
@@ -25,7 +23,11 @@ const Portal = () => {
           <LoginButton>Log In</LoginButton>
           <ModalLink>Forgot password?</ModalLink>
           <ModalSeparator />
-          <SignUpButton onClick={() => setupUser()}>
+          <SignUpButton
+            onClick={() => {
+              alert("tbc...");
+            }}
+          >
             Create new account
           </SignUpButton>
         </Modal>
