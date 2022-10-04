@@ -1,31 +1,32 @@
 import styled from "styled-components";
+import { COLORS, DEVICE, MODAL_CONSTANTS } from "./constants";
 
-const size = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px",
-};
+export const NavbarContainer = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 5vh;
+  background: ${COLORS.trueBlue};
+  justify-content: end;
+`;
 
-const device = {
-  mobileS: `(max-width: ${size.mobileS})`,
-  mobileM: `(max-width: ${size.mobileM})`,
-  mobileL: `(max-width: ${size.mobileL})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
-  desktopL: `(max-width: ${size.desktop})`,
-};
+export const NavbarItem = styled.button`
+  display: flex;
+  justify-contents: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  font-weight: bold;
+  border: none;
+  background: ${COLORS.trueBlue};
+  color: ${COLORS.offWhite};
+`;
 
 export const Screen = styled.div`
   display: flex;
+  height: 95vh;
   width: 100vw;
-  height: 100vh;
-  background: #ffffff;
+  background: #f0f2f5;
   justify-content: center;
   align-items: center;
 `;
@@ -36,10 +37,10 @@ export const ScreenCard = styled.div`
   width: 100vw;
   height: 90%;
   background: #f0f2f5;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     flex-direction: column;
     height: 100%;
   }
@@ -48,92 +49,84 @@ export const ScreenCard = styled.div`
 export const LargeLogo = styled.img`
   width: 400px;
   margin-bottom: 200px;
+  margin-right: 10%;
 
-  @media ${device.laptop} {
-    width: 450px;
-    margin-bottom: 0px;
+  @media ${DEVICE.laptop} {
+    width: 350px;
+    margin-top: 100px;
+    margin-bottom: 75px;
+    margin-right: 0%;
   }
 `;
 
 export const Modal = styled.div`
   display: flex;
-  width: 500px;
-  height: 500px;
-  background: #ffffff;
   flex-direction: column;
+  width: 350px;
+  height: auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  align-items: center;
+  padding-bottom: 5%;
 `;
 
-export const ModalTitle = styled.div`
-  width: 100%;
-  height: 25%;
-  background: #648de5ff;
+export const ModalInput = styled.input`
+  width: 80%;
+  font-size: 17px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #dddfe2;
+  margin-top: 5%;
 `;
 
-export const ModalSubtitle = styled.div`
-  width: 100%;
-  height: 15%;
-  background: #9eb7e5ff;
+export const ModalButton = styled.button`
+  width: 90%;
+  height: 48px;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 0 16px;
+  margin-top: 5%;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(95%);
+  }
+
+  &:active {
+    transition-duration: 100ms;
+    transform: scale(0.97);
+  }
+`;
+export const LoginButton = styled(ModalButton)`
+  width: 90%;
+  background-color: ${COLORS.trueBlue};
+  color: ${COLORS.white};
+`;
+export const SignUpButton = styled(ModalButton)`
+  width: 60%;
+  font-size: 16px;
+  background-color: ${COLORS.goodGreen};
+  color: ${COLORS.white};
 `;
 
-export const ModalSubmitButton = styled.div`
-  width: 20%;
-  height: 10%;
+export const ModalLink = styled.a`
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: bold;
+  color: ${COLORS.trueBlue};
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
-export const ModalCenter = styled.div`
-  width: 100%;
-  height: 40%;
+export const ModalSeparator = styled.div`
+  width: 90%;
+  border-bottom: 1px solid #dadde1;
+  margin: 20px 16px;
 `;
-
-export const ModalFooter = styled.div`
-  width: 100%;
-  height: 10%;
-`;
-
-/* CSS HEX */
-// --fbWhite: #ffffff;
-// --fbGrey: #f0f2f5;
-// --sage: #cdc392ff;
-// --alabaster: #e8e5daff;
-// --wild-blue-yonder: #9eb7e5ff;
-// --cornflower-blue: #648de5ff;
-// --y-in-mn-blue: #304c89ff;
-
-/* CSS HSL */
-// --sage: hsla(50, 37%, 69%, 1);
-// --alabaster: hsla(47, 23%, 88%, 1);
-// --wild-blue-yonder: hsla(219, 58%, 76%, 1);
-// --cornflower-blue: hsla(221, 71%, 65%, 1);
-// --y-in-mn-blue: hsla(221, 48%, 36%, 1);
-
-/* SCSS HEX */
-// $sage: #cdc392ff;
-// $alabaster: #e8e5daff;
-// $wild-blue-yonder: #9eb7e5ff;
-// $cornflower-blue: #648de5ff;
-// $y-in-mn-blue: #304c89ff;
-
-/* SCSS HSL */
-// $sage: hsla(50, 37%, 69%, 1);
-// $alabaster: hsla(47, 23%, 88%, 1);
-// $wild-blue-yonder: hsla(219, 58%, 76%, 1);
-// $cornflower-blue: hsla(221, 71%, 65%, 1);
-// $y-in-mn-blue: hsla(221, 48%, 36%, 1);
-
-/* SCSS RGB */
-// $sage: rgba(205, 195, 146, 1);
-// $alabaster: rgba(232, 229, 218, 1);
-// $wild-blue-yonder: rgba(158, 183, 229, 1);
-// $cornflower-blue: rgba(100, 141, 229, 1);
-// $y-in-mn-blue: rgba(48, 76, 137, 1);
-
-/* SCSS Gradient */
-// $gradient-top: linear-gradient(0deg, #cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
-// $gradient-right: linear-gradient(90deg, #cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
-// $gradient-bottom: linear-gradient(180deg, #cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
-// $gradient-left: linear-gradient(270deg, #cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
-// $gradient-top-right: linear-gradient(45deg, #cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
-// $gradient-bottom-right: linear-gradient(135deg, #cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
-// $gradient-top-left: linear-gradient(225deg, #cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
-// $gradient-bottom-left: linear-gradient(315deg, #cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
-// $gradient-radial: radial-gradient(#cdc392ff, #e8e5daff, #9eb7e5ff, #648de5ff, #304c89ff);
