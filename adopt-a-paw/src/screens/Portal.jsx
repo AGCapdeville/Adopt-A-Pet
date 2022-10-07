@@ -30,6 +30,7 @@ const Portal = () => {
           >
             Create new account
           </SignUpButton>
+          <div>{process.env.REACT_APP_VAR}</div>
         </Modal>
       </ScreenCard>
     </Screen>
