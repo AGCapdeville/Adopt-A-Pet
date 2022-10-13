@@ -30,7 +30,7 @@ const Portal = () => {
           >
             Create new account
           </SignUpButton>
-          <div>{process.env.REACT_APP_TOML_ENV_VAR}</div>
+          <div>REACT ENV VAR: {process.env.REACT_APP_TOML_ENV_VAR}</div>
         </Modal>
       </ScreenCard>
     </Screen>
